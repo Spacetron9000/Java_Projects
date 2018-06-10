@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="603.0" prefWidth="464.0" style="-fx-background-image: url('file:C:/Users/671km/OneDrive/Documents/NetBeansProjects/PEX3/src/resources/media/matrix.gif'); -fx-background-radius: 25; -fx-padding: 10;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pex3.FXMLDocumentController">
+   <children>
+      <Button layoutX="415.0" layoutY="608.0" mnemonicParsing="false" onAction="#exitEnigma" style="-fx-background-color: red;" text="Exit" textFill="WHITE" />
+      <Label layoutX="20.0" layoutY="101.0" text="Plugboard (Separate by commas)" textFill="WHITE" />
+      <Label layoutX="20.0" layoutY="156.0" text="Reflector (Separate by commas)" textFill="WHITE" />
+      <ComboBox fx:id="innerRotor" layoutX="3.0" layoutY="30.0" prefHeight="25.0" prefWidth="88.0" promptText="Inner" visibleRowCount="5" />
+      <ComboBox fx:id="middleRotor" layoutX="91.0" layoutY="30.0" prefHeight="25.0" prefWidth="88.0" promptText="Middle" visibleRowCount="5" />
+      <ComboBox fx:id="outerRotor" layoutX="182.0" layoutY="30.0" prefHeight="25.0" prefWidth="88.0" promptText="Outer" visibleRowCount="5" />
+      <Label layoutX="103.0" layoutY="7.0" prefHeight="17.0" prefWidth="89.0" text="Rotor Selection" textFill="WHITE" />
+      <Button fx:id="encrypt" layoutX="361.0" layoutY="49.0" mnemonicParsing="false" onAction="#process" prefHeight="38.0" prefWidth="89.0" style="-fx-background-color: black; -fx-border-color: white;" text="Go!" textFill="WHITE" />
+      <TextArea fx:id="inText" layoutX="12.0" layoutY="227.0" prefHeight="318.0" prefWidth="214.0" style="-fx-control-inner-background: black; -fx-background-color: black; -fx-border-color: darkviolet; -fx-text-inner-color: darkviolet; -fx-wrap-text: true;" />
+      <TextArea fx:id="outText" layoutX="235.0" layoutY="227.0" prefHeight="318.0" prefWidth="214.0" style="-fx-control-inner-background: black; -fx-background-color: black; -fx-border-color: red; -fx-text-inner-color: red; -fx-wrap-text: true;" />
+      <TextArea fx:id="plugs" layoutX="3.0" layoutY="118.0" prefHeight="38.0" prefWidth="214.0" style="-fx-control-inner-background: black; -fx-text-inner-color: white;" text="SZ,GT,DV,KU,FO,MY,EW,JN,IX,LQ" />
+      <TextArea fx:id="reflectors" layoutX="3.0" layoutY="173.0" prefHeight="38.0" prefWidth="251.0" style="-fx-control-inner-background: black; -fx-text-inner-color: white;" text="KM,AX,FZ,GO,DI,CN,BR,PV,LT,EQ,HS,UW,J.,Y " />
+      <Label layoutX="51.0" layoutY="211.0" text="Text to be encrypted:" textFill="WHITE" />
+      <Label layoutX="284.0" layoutY="211.0" text="Encrypted text" textFill="WHITE" />
+      <VBox layoutX="255.0" layoutY="161.0" prefHeight="54.0" prefWidth="64.0" style="-fx-background-color: gray;">
+         <children>
+            <Button fx:id="encryptText" mnemonicParsing="false" onAction="#setModeToText" prefHeight="27.0" prefWidth="67.0" style="-fx-background-color: black; -fx-border-color: white;" text="Textbox" textFill="WHITE" />
+            <Button fx:id="encryptFile" mnemonicParsing="false" onAction="#setModeToFile" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: black; -fx-border-color: white;" text="File" textFill="WHITE" />
+         </children>
+      </VBox>
+      <Label layoutX="269.0" layoutY="144.0" text="Mode" textFill="WHITE" />
+      <Label layoutX="63.0" layoutY="60.0" text="Rotor Start Positions (1-28)" textFill="WHITE" />
+      <TextField fx:id="innerStartPos" layoutX="77.0" layoutY="77.0" prefHeight="25.0" prefWidth="32.0" style="-fx-control-inner-background: black; -fx-text-inner-color: white;" text="14" />
+      <TextField fx:id="middleStartPos" layoutX="119.0" layoutY="77.0" prefHeight="25.0" prefWidth="32.0" style="-fx-control-inner-background: black; -fx-text-inner-color: white;" text="9" />
+      <TextField fx:id="outerStartPos" layoutX="160.0" layoutY="77.0" prefHeight="25.0" prefWidth="32.0" style="-fx-control-inner-background: black; -fx-text-inner-color: white;" text="24" />
+      <TextField fx:id="modeIndicator" editable="false" layoutX="361.0" layoutY="24.0" prefHeight="25.0" prefWidth="88.0" style="-fx-control-inner-background: black; -fx-background-color: black; -fx-text-inner-color: white;" text="Textbox" />
+      <TextField fx:id="outFileNameBox" layoutX="330.0" layoutY="180.0" prefHeight="25.0" prefWidth="120.0" style="-fx-text-inner-color: white; -fx-control-inner-background: black;" text="DefaultFileDay31" />
+      <Label layoutX="336.0" layoutY="156.0" text="Name of output:" textFill="WHITE" />
+      <Button fx:id="openFileButton" layoutX="367.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleOpen" prefHeight="27.0" prefWidth="77.0" style="-fx-background-color: black; -fx-border-color: white;" text="Open File" textFill="WHITE" />
+      <TextArea fx:id="statusBar" editable="false" layoutX="10.0" layoutY="547.0" prefHeight="86.0" prefWidth="385.0" style="-fx-control-inner-background: black; -fx-text-inner-color: white; -fx-wrap-text: true;" text="Welcome to the Enigma Machine!" />
+   </children>
+</AnchorPane>
